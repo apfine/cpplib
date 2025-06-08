@@ -1,0 +1,124 @@
+STLimp.txt
+The vector have two things capacity which refers to the amount of the memory assigned to the vector and size refers to the number of elements present in the array.
+
+The vectors have mainly some functions : 
+    1. array.push_back() 
+    2. array.pop_back()
+    3. array.front()
+    4. array.back()
+    5. array.capacity()
+    6. array.size()
+    7. array.at()
+
+While declaring a vector like this "vector <int> array(5,1)" 5 is the size of the array and 1 is the first element to be added in to the array.
+
+---------------------------------------------------------------------///////////DEQUE\\\\\\\\-----------------------------------------------
+It is dynamic .
+Random access is possible .
+The dque is a type of dataset which is a double queue .
+This means that we can perform insertion and deletion at both the ends.
+It is implemented using a complex method using many arrays and data is tracked using many other mechanisms which we dont need to know at this level.
+It is the beast mode of a vector array in which we can push members from the front also from the back.
+The methods related to a deque are : 
+    1. deque.push_back()
+    2. deque.push_front()
+    3. deque.empty()
+    4. d.last()
+    5. d.erase()
+    6. d.erase(d.begin() , d.begin()+1)                   //This method is used to erase the deque from front to end.
+    7. While applying a for loop on the deque you can also use for(int i : d){} for iterating over the loop .
+The feature of capacity do not changes even after using the erase function we have same capacity . It is somewhat similar to the vector arrays as above.
+
+--------------------------------------------------------------------//////////List\\\\\\\\\\-------------------------------------------------
+Random access is not possible.
+It is dynamic .
+This is what it sounds like and acts as so .
+It is a linked list and the order of members do not matters and all the members have info about next and previous member.
+The methods it have are as follows : 
+
+    1. l.push_back()
+    2. l.push_front()
+    3. l.erase(l.begin() , l.begin()+1)
+    4. l.size()
+
+#Forward_list also exist in the STL which is differentiated by the fact that they are not doubly linked means we cannot go back from an element .
+
+--------------------------------------------------------------------/////////Stack\\\\\\\\\\\--------------------------------------------------
+Random access is not possible in this container.
+it is a dynamic dataset .
+It do have following methods --
+    1. s.push()
+    2. s.pop()
+    3. s.empty()
+
+--------------------------------------------------------------------/////////Queue\\\\\\\\\\\\---------------------------------------------------
+First in first out concept is being used .
+it do not provides a random access support.
+Methods are as follows :
+    1. q.push()
+    2. q.pop()
+    3. q.empty()
+    4. q.size()
+    5. q.front()
+
+All the operations have O(1).
+
+-------------------------------------------------------------------/////////PriorityQueue(MaxHeap)\\\\\\-------------------------------------------
+#include <queue>
+PriorityQueue <int> maxi ; (This thing is called the implemention of MaxHeap)
+        The mini heap returns the minimum element of the queue.
+        The maximum heap returns the maximum elements of the queue.
+
+PriorityQueue <int , vector <int> , greater <int> > mini  ;
+Methods being used for the heaps ;
+    1. m.push()
+    2. m.pop()
+    3. m.size()
+
+------------------------------------------------------------------//////////Set\\\\\\\\\\\\\\-------------------------------------------------------
+The dynamic access is possible and hence the erase function exists.
+#include <set>
+The methods in the set are -
+    1. s.insert()
+    2. s.erase()
+
+Lets learn to create a iterator : 
+    set <int>::iterator it = s.begin() ;
+    it++;
+    s.erase(it);
+
+This is how we create an iterator for iterating over the set.
+or we can iterate using this method below:
+    for(auto i : s){}
+
+    set <int>::iterator itr = s.find(5)
+    //Now we will try to find the next element of 5 .
+    for(auto i = itr ; itr!=s.end() ; itr++){
+        cout<<*it<<" " ;                                        //The asterix being used is for pointing to the itr memor address.
+    }
+
+//Insert , find , erase , count have the O(log n)
+//size , begin , empty , end have O(1)
+
+----------------------------------------------------------------//////////Maps\\\\\\\\\\\\\-------------------------------------------------------------
+In maps we have a unique key pointing to one value.
+Basically this resembles the dict container.
+Random access is possible by using the key .
+#include <map>
+map <int , string > m ;
+m[1]  = "str"
+
+//Making the iterator;
+auto it = m.find(5);
+m.erase(key) ;
+
+---------------------------------------------------------------/////////Algorithms\\\\\\\\\\-----------------------------------------------------------
+cout<<binary_search(v.begin(), v.end() , 5)<<endl;
+
+#REVERSE function
+string abcd = "abcd";
+reverse(abcd.begin() , abcd.end());
+
+
+
+
