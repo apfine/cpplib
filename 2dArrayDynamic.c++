@@ -9,6 +9,8 @@ void arrayPrint(int a[] , int row , int col){
     cout<<endl;
 }
 
+
+
 int main(){
     int row , col ;
     cin>>row;
