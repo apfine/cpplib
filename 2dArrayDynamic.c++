@@ -13,6 +13,7 @@ void arrayPrint(int a[] , int row , int col){
 
 int main(){
     int row , col ;
+
     cin>>row;
     cin>>col;
     int** array = new int*[row];
